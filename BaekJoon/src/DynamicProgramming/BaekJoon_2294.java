@@ -2,7 +2,8 @@ package DynamicProgramming;
 
 import java.util.Arrays;
 import java.util.Scanner;
-
+//2018-08-24 
+//체감 난이도: 중하
 public class BaekJoon_2294 {
 
 	public static void main(String[] args) {
