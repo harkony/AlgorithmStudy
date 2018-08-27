@@ -27,7 +27,7 @@ public class BaekJoon_11062 {
 			}
 			dp[n-1][n-1]=arr[n-1];
 			
-			System.out.println(DP(0, n - 1));
+			System.out.println(DP(0, n - 1));	
 			/*
 			for (int i = 0; i < n; i++) {
 				for (int j = 0; j < n; j++) {
