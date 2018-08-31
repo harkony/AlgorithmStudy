@@ -40,12 +40,11 @@ public class BaekJoon_1753 {
 		}
 
 		PriorityQueue<Pair> priorityqueue = new PriorityQueue<Pair>();
-		for (int i = 1; i <= V; i++) {
-			if (i == start)
-				priorityqueue.add(new Pair(i, 0));
-			else
-				priorityqueue.add(new Pair(i, INF));
-		}
+	
+		priorityqueue.add(new Pair(start, 0));
+		
+				
+		
 
 		while (!priorityqueue.isEmpty()) {
 			Pair pop = priorityqueue.poll();
