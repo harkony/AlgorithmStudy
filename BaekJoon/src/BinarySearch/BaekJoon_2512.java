@@ -12,7 +12,9 @@ public class BaekJoon_2512 {
 	static int limit;
 	// idea: 예산의 목록을 sorting한다.
 	// 전체 총합의 최대가 되는 값은 arr[i]와 arr[j] 사이에 있을 것이다.
-
+	// + arr[i]보다 작을 수도 있다.
+	// + arr[i-1]일 수도 있다.
+	// 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		n = sc.nextInt();
