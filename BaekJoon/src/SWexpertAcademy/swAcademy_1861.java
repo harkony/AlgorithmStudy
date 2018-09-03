@@ -53,6 +53,7 @@ public class swAcademy_1861 {
 		for (int d = 0; d < 4; d++) {
 			int nextlow = curlow + dir[d][0];
 			int nextcol = curcol + dir[d][1];
+			
 			if (nextlow > -1 && nextlow < n && nextcol > -1 && nextcol < n
 					&& mat[nextlow][nextcol] - 1 == mat[curlow][curcol])
 				Traversal(low, col, nextlow, nextcol, n);

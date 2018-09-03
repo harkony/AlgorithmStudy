@@ -30,19 +30,6 @@ public class BaekJoon_14501 {
 				PAY[i]=PAY[i+1];
 			}
 		}
-		/*
-		for(int i=0;i<n+1;i++)
-			System.out.print(T[i]+" ");
-		System.out.println();
-		
-		for(int i=0;i<n+1;i++)
-			System.out.print(P[i]+" ");
-		System.out.println();
-		
-		for(int i=0;i<n+1;i++)
-			System.out.print(PAY[i]+" ");
-		System.out.println();
-		*/
 		System.out.println(PAY[0]);
 	}
 	public static int max(int a,int b)

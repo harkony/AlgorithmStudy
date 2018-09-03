@@ -28,16 +28,11 @@ public class BaekJoon_2157 {
 			if (mat_origin[s][d] < score)
 				mat_origin[s][d] = score;
 		}
-
-		
-		
 		for (int i = 1; i <= n; i++)
 			mat_route[i][1] = mat_origin[1][i];
 
 		//print(mat_origin,n,n,0);
 		//print(mat_route,n,m,1);
-		
-		
 		
 		// i±îÁö
 		for (int i = 3; i <= n; i++) {
@@ -49,7 +44,6 @@ public class BaekJoon_2157 {
 					int score1toP=mat_route[p][j-1];
 					int scorePtoN=mat_origin[p][i];
 					int score=score1toP+scorePtoN;
-					
 					//System.out.println(i+","+j+","+p+","+scoreP+","+scorePtoN);
 					if(score1toP !=0 && scorePtoN !=0 && score>max )
 						max=score;
