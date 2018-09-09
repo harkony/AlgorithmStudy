@@ -16,8 +16,6 @@ public class BaekJoon_14919 {
 		String str=sc.nextLine();
 		String splits[]=str.split(" ");
 	
-		
-		
 		for(int i=0;i<splits.length;i++)
 		{
 		
