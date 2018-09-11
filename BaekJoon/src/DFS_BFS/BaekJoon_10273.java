@@ -60,6 +60,7 @@ public class BaekJoon_10273 {
 			list.add(start);
 			list.add(treasure[end] - cost);
 			// lists.get(i) : i로 갈 수 있는 출발지 list.
+			// 동굴 끝에서부터 거꾸로 갈것 이므로 list(destination)에 source를 저장한다.
 			lists.get(end).add(list);
 			nNext[start] += 1;
 
@@ -68,27 +69,31 @@ public class BaekJoon_10273 {
 	}
 
 	public static void Process() {
+		//idea
+		//dp[i] : i 이후에 얻을 수 있는 이득의 최대값
+		
 		for (int i = 2; i <= N; i++) {
-			if (nNext[i] == 0) // 더 이상 진행 할 수 없는 막다른 동굴
+			if (nNext[i] == 0) // 더 이상 진행 할 수 없는 막다른 동굴, 동굴 끝에서 시작하므로 queue에 넣는다
 			{
 				dp[i] = 0;
 				queue.add(i);
 			} else
-				dp[i] = Long.MIN_VALUE;
+				dp[i] = Long.MIN_VALUE; // 방문하지 않은 값 초기화
 		}
 		while (!queue.isEmpty()) {
 			int caveEnd = queue.poll();
+			//list: caveEnd에 도달할 수 있는 caveStart, caveStart->caveEnd의 cost
 			ArrayList<ArrayList<Integer>> list = lists.get(caveEnd);
 			for (int i = 0; i < list.size(); i++) {
 				int caveStart = list.get(i).get(0);
 				int profit = list.get(i).get(1);
 				long dpNext = dp[caveEnd] + profit;
-				if (dp[caveStart] < dpNext) {
+				if (dp[caveStart] < dpNext) {  // 갱신한다
 					if (dpNext > 0) {
 						routes[caveStart]=caveEnd;
 						dp[caveStart] = dp[caveEnd] + profit;
 						queue.add(caveStart);
-					} else {
+					} else {  // dp에 는 최대값을 저장하므로 음수값이면 0으로 저장한다.
 						dp[caveStart] = 0;
 						queue.add(caveStart);
 					}
