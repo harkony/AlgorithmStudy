@@ -11,7 +11,7 @@ import java.util.Scanner;
 // 2) BFS+DP 
 //     + route 저장: (string -> memory fail -> integer[] 로)
 //     + 출력 : (string 이용 -> 시간 초과 -> stringBuilder -> pass)
-// 체감 난이도: 사	
+// 체감 난이도: 상	
 public class BaekJoon_10273 {
 	static int N;
 	static int E;
