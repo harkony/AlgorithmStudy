@@ -1,6 +1,7 @@
 package Kakao_2018;
 
-// idea
+//2018-09-15
+
 // 시간이 부족하여 naive한 방법을 시도하였으나 반정도는 오답이었다.
 
 import java.util.HashMap;

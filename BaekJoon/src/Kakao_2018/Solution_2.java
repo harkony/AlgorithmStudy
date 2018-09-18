@@ -1,4 +1,7 @@
 package Kakao_2018;
+//2018-09-15
+//idea
+//그냥 계산문제로 풀이하였다
 
 class Solution_2 {
 	public static void main(String[] args) {
