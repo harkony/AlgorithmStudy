@@ -15,22 +15,18 @@ public class BaekJoon_1063 {
 		King king=new King(splits[0]);
 		Stone stone=new Stone(splits[1]);
 		int nCMD=Integer.parseInt(splits[2]);
-		
 		for(int i=0;i<nCMD;i++) {
 			String cmd=sc.nextLine();
 			king.move(cmd, stone);
-			
 		}
 		king.print();
 		stone.print();
-		
 	}
 
 	public static class Object {
 		int x;
 		int y;
 		int[][] dir = { { 0, 1 }, { 0, -1 }, { -1, 0 }, { 1, 0 }, { 1, 1 }, { 1, -1 }, { -1, 1 }, { -1, -1 } };
-
 		Object(String str) {
 			x = str.charAt(0) - 'A'+1; 
 			y = str.charAt(1) - '0';  
@@ -101,7 +97,6 @@ public class BaekJoon_1063 {
 			super(str);
 			// TODO Auto-generated constructor stub
 		}
-
 		public boolean move(String cmd) {
 			int nextX = 0;
 			int nextY = 0;
