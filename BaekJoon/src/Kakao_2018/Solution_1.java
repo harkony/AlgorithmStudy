@@ -1,5 +1,9 @@
 package Kakao_2018;
+//2018-09-15
 
+//idea
+//계속 record를 뒤에서부터 한번 읽고 앞에서 부터 다시 읽으면서 msg를 만들다가 시간 초과가 나서 멘붕이었다.
+//앞에서 부터 읽으면서 uid에 따른 name을 생신함과 동시에 uid 와 action을 저장했다가, 나중에 uid를 name으로 치환시켰다.
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
