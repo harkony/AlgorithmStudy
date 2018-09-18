@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Solution_7 {
-	static int block = 220;
 
 	public static void main(String[] args) {
 		int arr[][] = { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
