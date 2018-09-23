@@ -3,7 +3,8 @@ package BinarySearch;
 import java.util.Scanner;
 
 // 2018-08-30
-// 체감 난이도: 
+// 체감 난이도: 하하
+
 public class BaekJoon_2869 {
 
 	public static void main(String[] args) {

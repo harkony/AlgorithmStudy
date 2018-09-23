@@ -3,7 +3,9 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 //2018-08-31 
-//체감 난이도: 
+//float으로 읽으면 안풀리는 문제
+//string으로 소수점 아래자리만 읽어 파싱해야한다.
+//체감 난이도: 중상
 public class BaekJoon_14919 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);

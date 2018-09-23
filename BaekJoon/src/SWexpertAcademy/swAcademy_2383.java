@@ -1,5 +1,6 @@
 //2018-9-4
-
+//체감난이도: 중상
+//50개중에 48개만 pass했다. 처음부터 다시 짜야한다.
 package SWexpertAcademy;
 
 import java.util.ArrayList;

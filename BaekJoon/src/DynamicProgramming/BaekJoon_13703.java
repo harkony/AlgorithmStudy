@@ -3,7 +3,7 @@ package DynamicProgramming;
 import java.util.Scanner;
 
 // 2018-08-31
-
+// 체감난이도: 하
 public class BaekJoon_13703 {
 
 	public static void main(String[] args) {

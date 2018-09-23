@@ -3,7 +3,7 @@ package DynamicProgramming;
 import java.util.Scanner;
 
 //2018-08-27 
-//체감 난이도: 
+//체감 난이도: 중상
 public class BaekJoon_11062 {
 	static int[] arr;
 	static int[][] dp;

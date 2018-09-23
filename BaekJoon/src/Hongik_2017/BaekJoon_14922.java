@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 //2018-08-31 
-//체감 난이도: 
+//체감 난이도: 하
 public class BaekJoon_14922 {
 	static int n;
 	static int[] arr;

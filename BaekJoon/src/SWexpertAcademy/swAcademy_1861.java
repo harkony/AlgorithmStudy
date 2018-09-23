@@ -1,5 +1,5 @@
 //2018-8-27
-
+//체감남이도: 하
 package SWexpertAcademy;
 
 import java.util.Scanner;

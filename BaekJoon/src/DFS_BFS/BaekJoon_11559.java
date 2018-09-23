@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 //2018-09-09 
-// 체감 난이도: 
+//idea: DFS를 2번 돌려 한번은 인접한 노드의 갯수를 구하고 한번은 인접한 노드의 갯수를 모든 노드에 전파한다
+// ==> 굳이 두번 돌리지 않고 함수에 인자를 추거하거나 arraylist로 좌표들을 리턴받는게 나을 수도 있겠다
+// 체감 난이도: 중
 public class BaekJoon_11559 {
 	static char map[][] = new char[12][6];
 	static int visit[][] = new int[12][6];

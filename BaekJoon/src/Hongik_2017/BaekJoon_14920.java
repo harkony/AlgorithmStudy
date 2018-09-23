@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 //2018-08-31 
-//체감 난이도: 
+//체감 난이도: 하
 public class BaekJoon_14920 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);

@@ -6,6 +6,7 @@ import java.util.Scanner;
 //2018-09-14 
 //체감 난이도: 	중
 //% 연산이 항상 양수가 아님을 기억하자!!!!!
+//사과와 뱀을 관리하는 게임기 클래스를 사용했다면 코드가 더 간결하고 복잡성도 떨어졌을 것이다.
 public class BaekJoon_3190 {
 	static int[][] DIR = { { 0, 1 }, { 1, 0 }, { 0, -1 }, { -1, 0 } };;
 	static ArrayList<ArrayList<Integer>> apples = new ArrayList<ArrayList<Integer>>();

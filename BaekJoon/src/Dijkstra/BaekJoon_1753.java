@@ -6,7 +6,8 @@ import java.util.Scanner;
 import java.util.Vector;
 
 // 2018-08-30 
-// 체감 난이도: 
+// priority queue를 이용한 다익스트라
+// 체감 난이도: 중
 public class BaekJoon_1753 {
 	static int V, E;
 	static int start;
