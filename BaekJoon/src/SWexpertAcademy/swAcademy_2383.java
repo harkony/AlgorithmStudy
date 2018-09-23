@@ -1,18 +1,17 @@
-//2018-9-4
-//체감난이도: 중상
-//50개중에 48개만 pass했다. 처음부터 다시 짜야한다.
+//2018-99-23
+//체감난이도: 중하
+
 package SWexpertAcademy;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class swAcademy_2383 {
-	static ArrayList<Person> personList = new ArrayList<Person>();
-	static ArrayList<Stair> stairList = new ArrayList<Stair>();
 	static int nP;
-	static int nC;
 	static int Complete;
-
+	static ArrayList<Person> people;
+	static ArrayList<Stair> stairs;
+	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int T = sc.nextInt();
@@ -20,147 +19,110 @@ public class swAcademy_2383 {
 			int n = sc.nextInt();
 			int nCase = 1;
 			int minTime = Integer.MAX_VALUE;
+			people = new ArrayList<Person>();
+			stairs = new ArrayList<Stair>();
 
-			personList.removeAll(personList);
-			stairList.removeAll(stairList);
 			nP = 0;
-			nC = 0;
 			for (int i = 0; i < n; i++) {
 				for (int j = 0; j < n; j++) {
-					int index = sc.nextInt();
-					if (index == 1) {
-						personList.add(new Person(i, j, nP++));
-					} else if (index > 1) {
-						stairList.add(new Stair(i, j, nC++, index));
+					int num = sc.nextInt();
+					if (num == 1) {
+						people.add(new Person(i, j));
+
+					} else if (num > 1) {
+						stairs.add(new Stair(i, j, num));
 					}
 				}
 			}
 
-			// System.out.println("nP : " + nP + ", nC : " + nC);
-			for (int i = 0; i < nP; i++)
-				nCase *= 2;
+			nP = people.size();
+			nCase <<= nP;
 
 			for (int i = 0; i < nCase; i++) {
-				Init();
-				int time = Process();
-				// System.out.println("\nnCase : " + i + " , time: " + time);
-				if (time < minTime)
-					minTime = time;
-				personList.get(personList.size() - 1).nextPosition();
-			}
-			System.out.println("#" + (loop + 1) + " " + minTime);
-		}
-	}
-
-	static class Person {
-		int xpos;
-		int ypos;
-		int personIndex;
-		int destination;
-		int distance2stair;
-		int distance2floor;
-
-		Person(int xpos, int ypos, int personIndex) {
-			this.xpos = xpos;
-			this.ypos = ypos;
-			this.personIndex = personIndex;
-			destination = 0;
-
-		}
-
-		void nextPosition() {
-			destination = (destination + 1) % 2;
-			distance2floor = -stairList.get(destination).len;
-			distance2stair = (Math.abs(stairList.get(destination).xpos - xpos)
-					+ Math.abs(stairList.get(destination).ypos - ypos));
-			if (personIndex > 0 && destination == 0)
-				personList.get(personIndex - 1).nextPosition();
-			if (personIndex > 0 && destination == 1) {
-				personList.get(personIndex - 1).reset();
-			}
-		}
-
-		void reset() {
-			distance2floor = -stairList.get(destination).len;
-			distance2stair = (Math.abs(stairList.get(destination).xpos - xpos)
-					+ Math.abs(stairList.get(destination).ypos - ypos));
-			if (personIndex > 0)
-				personList.get(personIndex - 1).reset();
-
-		}
-
-		void move() {
-			if (distance2stair < distance2floor)
-				return;
-			else if (distance2stair == 0) {
-				if (stairList.get(destination).available()) {
-					stairList.get(destination).nAction += 1;
-					distance2stair--;
+				Complete=0;
+				int bit = i;
+				for (int j = 0; j < nP; j++, bit >>= 1) {
+					people.get(j).setDest(stairs.get(bit&1));
+					//System.out.print(bit&1);
+					//people.get(j).print();
 				}
-			} else if (distance2stair == distance2floor) {
-				Complete += 1;
-				stairList.get(destination).nAction -= 1;
-				distance2stair--;
-			} else {
-				distance2stair--;
-			}
+				//System.out.println();
+				int time=0;
+				while(Complete<nP) {
+					//System.out.println(time);
+					for(int k=0;k<people.size();k++)
+						people.get(k).preAction();
+					for(int k=0;k<people.size();k++)
+						people.get(k).postAction();
+					time++;
+				}
+				if(time<minTime)
+					minTime=time;
+				
+			}			
+			System.out.println("#" + (loop + 1) + " " + (minTime+1));
 		}
-
 	}
 
-	static class Stair {
-		int xpos;
-		int ypos;
-		int stairIndex;
+	public static class Stair {
+		int x;
+		int y;
 		int len;
-		int nAction;
+		ArrayList<Person> ing = new ArrayList<Person>();
 
-		Stair(int xpos, int ypos, int stairIndex, int len) {
-			this.xpos = xpos;
-			this.ypos = ypos;
-			this.stairIndex = stairIndex;
+		Stair(){
+			
+		}
+		Stair(int x, int y, int len) {
+			this.x = x;
+			this.y = y;
 			this.len = len;
-			this.nAction = 0;
 		}
-
-		boolean available() {
-			if (nAction < 3)
-				return true;
-			else
-				return false;
-		}
-
-		void reset() {
-			nAction = 0;
-		}
-
+		
 	}
 
-	static int Process() {
-		int time = 0;
+	public static class Person {
+		int x;
+		int y;
+		int dist;
+		Stair dest=new Stair();
 
-		while (Complete < nP) {
-			//System.out.println("Time :" + time);
-			//for (int i = 0; i < nP; i++)
-			//	System.out.print(personList.get(i).distance2stair + " ");
-			//System.out.println("");
-			for (int i = 0; i < nP; i++)
-				personList.get(i).move();
-			time++;
+		Person(int x, int y) {
+			this.x = x;
+			this.y = y;
 		}
-		return time;
-	}
 
-	static void Init() {
-		Complete = 0;
-		for (int i = 0; i < nP; i++) {
-			Person p = personList.get(i);
-			p.distance2floor = -stairList.get(p.destination).len;
-			p.distance2stair = Math.abs(p.xpos - stairList.get(p.destination).xpos)
-					+ Math.abs(p.ypos - stairList.get(p.destination).ypos);
+		public void print() {
+			System.out.println("dest: "+dest.len+" dist:"+dist);
 		}
-		for (int i = 0; i < nC; i++) {
-			stairList.get(i).reset();
+		public void setDest(Stair dest) {
+			this.dest = dest;
+			dist=Math.abs(dest.x-x)+Math.abs(dest.y-y);
 		}
+
+		
+		public void preAction() {
+			if(dist>0)
+				dist--;
+			else if(dist==0) {
+				if(dest.ing.size()<3) {
+					dest.ing.add(this);
+					dist--;
+				} 
+			} else if(dist<0 && dist+dest.len>0) {
+				dist--;
+			}
+			
+		}
+		
+		public void postAction() {
+			if(dist+dest.len==0) {
+				dest.ing.remove(0);
+				Complete++;
+				dist--;
+			}
+			
+		}
+
 	}
 }
