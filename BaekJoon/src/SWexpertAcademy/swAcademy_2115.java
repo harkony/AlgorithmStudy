@@ -1,6 +1,7 @@
 package SWexpertAcademy;
 //2018-09-23
 //최대값 갱신 위치와 DFS의 return 시점 조심
+//체감 난이도: 중
 import java.util.ArrayList;
 import java.util.Scanner;
 

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 //2018-09-23
+//체감 난이도: 중상
 public class swAcademy_2112 {
 	static int D;
 	static int W;

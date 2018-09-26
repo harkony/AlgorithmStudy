@@ -1,8 +1,10 @@
-	//2018-8-27
+package SWexpertAcademy;
+
+//2018-8-27
 // 일반적인 시뮬레이션 방법으로는 풀리지 않는다
 // 요세푸스 알고리즘을 이용하자.
 
-package SWexpertAcademy;
+
 
 import java.util.ArrayList;
 import java.util.Scanner;

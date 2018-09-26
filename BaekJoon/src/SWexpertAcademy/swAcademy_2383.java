@@ -1,7 +1,8 @@
-//2018-99-23
+package SWexpertAcademy;
+
+//2018-09-23
 //체감난이도: 중하
 
-package SWexpertAcademy;
 
 import java.util.ArrayList;
 import java.util.Scanner;
