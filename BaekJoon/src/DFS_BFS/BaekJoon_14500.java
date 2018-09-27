@@ -1,4 +1,4 @@
-package Simulation;
+package DFS_BFS;
 
 import java.util.Scanner;
 
