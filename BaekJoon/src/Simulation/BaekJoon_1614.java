@@ -4,7 +4,7 @@ package Simulation;
 import java.util.Scanner;
 
 //2018-09-14 
-//체감 난이도: 	
+//체감 난이도: 중하	
 public class BaekJoon_1614 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
