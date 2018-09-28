@@ -22,6 +22,7 @@ public class BaekJoon_14500 {
 			for (int col = 0; col < M; col++)
 				mat[low][col] = sc.nextInt();
 
+
 		for (int low = 0; low < N; low++) {
 			visited=new boolean[N][M];
 			for (int col = 0; col < M; col++) {
