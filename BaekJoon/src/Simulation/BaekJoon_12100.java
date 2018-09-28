@@ -6,7 +6,8 @@ import java.util.Queue;
 import java.util.Scanner;
 
 //2018-09-28	
-//체감 난이도: 
+//체감 난이도: 중상
+//어려운 디버깅과 만들기 어려운 testcase .........
 public class BaekJoon_12100 {
 	static int LIMIT_MOVE = 5;
 	static int MAX = 0;
