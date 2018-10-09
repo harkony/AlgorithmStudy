@@ -23,7 +23,6 @@ public class BaekJoon_12100 {
 		Game game = new Game(map, n);
 		DFS(game, 0);
 		System.out.println(MAX);
-
 	}
 
 	public static void DFS(Game game, int len) {

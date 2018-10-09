@@ -23,7 +23,7 @@ public class BaekJoon_13458 {
 		C = sc.nextInt();
 		long total = 0;
 		for (int i = 0; i < N; i++) {
-			if (map.get(arr[i]) == null) {
+			if (map.get(arr[i]) == null) {	
 				int abst = arr[i] - B;
 				if(abst<=0) {
 					map.put(arr[i], 1);
