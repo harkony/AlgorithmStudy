@@ -57,6 +57,7 @@ public class swAcademy_5653 {
 				System.out.println((low - 300) + "," + (col - 300) + " " + vessels[low][col].vitality + " "
 						+ status_str[vessels[low][col].getStatus()]);
 			}
+			System.out.println();
 		}
 
 		void setFixed() {
@@ -73,19 +74,13 @@ public class swAcademy_5653 {
 		}
 
 		public int getAliveAfter(int time) {
-			//showVessels();
-			for (int i = 0; i < time; i++) {
-				//System.out.println("time " + i);
+			// showVessels();
+			for (int i = 1; i <= time; i++) {
 				simulate();
 				setFixed();
-				//showVessels();
 			}
-			int alive = 0;
-			for (int i = 0; i < validVessels.size(); i += 2) {
-				if (vessels[validVessels.get(i)][validVessels.get(i + 1)].getStatus() < 2)
-					alive++;
-			}
-			return alive;
+			
+			return validVessels.size() / 2;
 		}
 
 		public void simulate() {
@@ -110,15 +105,15 @@ public class swAcademy_5653 {
 					}
 				}
 				v.aging();
-				/*
-				
+
+				// dead 상태의 세포는 삭제한다.
 				if (v.isDead()) {
-				 validVessels.remove(i);
-				 validVessels.remove(i);
-				 i -= 2;
-				 nValid -= 2;
-				 }
-				*/
+					validVessels.remove(i);
+					validVessels.remove(i);
+					i -= 2;
+					nValid -= 2;
+				}
+
 			}
 
 		}
