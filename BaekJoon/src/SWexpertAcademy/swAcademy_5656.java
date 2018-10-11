@@ -108,7 +108,7 @@ public class swAcademy_5656 {
 		}
 		System.out.println();
 	}
-
+	
 	static void shift(int[][] map) {
 		for (int col = 0; col < W; col++) {
 			Queue<Integer> queue = new LinkedList();
