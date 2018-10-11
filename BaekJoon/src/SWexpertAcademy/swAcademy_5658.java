@@ -66,7 +66,6 @@ public class swAcademy_5658 {
 			}
 			// Á¤·Ä
 			Collections.sort(list);
-
 			System.out.println("#" + testcase + " " + list.get(list.size() - K));
 		}
 
