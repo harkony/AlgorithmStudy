@@ -57,20 +57,26 @@ public class swAcademy_2115 {
 		}
 	}
 
+	//low,col에서 M개의 꿀통을 선택하여 얻을 수 있는 최대의 이익을 리턴한다.
 	static int benefit(int low, int col) {
 
+		//M개의 꿀통중에 선택 할 수 있는 경우의 수는 2의 M승이다.
 		int num = 1 << M;
 		int max = 0;
+		
+		//M개의 꿀통 중에 모든 선택에 대해서
 		for (int i = 0; i < num; i++) {
 			int bit = i;
 			int sum = 0;
 			int benefit = 0;
 			for (int j = 0; j < M; j++, bit >>= 1) {
+				//선택된 꿀통의 합과 가격 각각 구한다.
 				if ((bit & 1) == 1) {
 					sum += mat[low][col + j];
 					benefit += (mat[low][col + j] * mat[low][col + j]);
 				}
 			}
+			//선택된 꿀의 양은 K값을 넘지지 않고 이윤이 최대라면 갱신한다
 			if (sum <= K && benefit >= max)
 				max = benefit;
 		}

@@ -55,8 +55,10 @@ public class swAcademy_1949 {
 
 			if (lowNext > -1 && lowNext < N && colNext > -1 && colNext < N && !visit[lowNext][colNext]) {
 				if( h > mat[lowNext][colNext]) {
+					//다음 지역이 현재 위치보다 낮을 경우는 공사가 필요없다
 					DFS(mat, visit,mat[lowNext][colNext],lowNext, colNext,len+1,dig);				
 				} else if (h > mat[lowNext][colNext]-K && !dig){
+					//다음 지역이 현재 위치보다 높지만 공사를 통해 해결 가능하고, 아직 공사하지 않았을 경우
 					DFS(mat, visit,h-1,lowNext, colNext,len+1,true);
 				}
 			}

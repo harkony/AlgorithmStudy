@@ -43,14 +43,14 @@ public class swAcademy_2383 {
 				Complete=0;
 				int bit = i;
 				for (int j = 0; j < nP; j++, bit >>= 1) {
+					// 사람별로 목적지 계단을 지정한다.
 					people.get(j).setDest(stairs.get(bit&1));
-					//System.out.print(bit&1);
-					//people.get(j).print();
+				
 				}
-				//System.out.println();
 				int time=0;
+				
+				// 모든 사람이 이동을 완료 할 때 까지
 				while(Complete<nP) {
-					//System.out.println(time);
 					for(int k=0;k<people.size();k++)
 						people.get(k).preAction();
 					for(int k=0;k<people.size();k++)
@@ -100,8 +100,8 @@ public class swAcademy_2383 {
 			this.dest = dest;
 			dist=Math.abs(dest.x-x)+Math.abs(dest.y-y);
 		}
-
 		
+		//preAction과 postAction을 따로 둔 이유는 사실을 순차적으로 작동하지만 동시성을 부여하기 위함이다.
 		public void preAction() {
 			if(dist>0)
 				dist--;
@@ -121,8 +121,7 @@ public class swAcademy_2383 {
 				dest.ing.remove(0);
 				Complete++;
 				dist--;
-			}
-			
+			}			
 		}
 
 	}

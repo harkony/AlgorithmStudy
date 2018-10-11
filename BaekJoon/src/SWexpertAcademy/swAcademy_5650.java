@@ -60,7 +60,7 @@ public class swAcademy_5650 {
 			System.out.println("#" + testcase + " " + bestScore);
 		}
 	}
-
+	
 	static class Game {
 		// obstacle[i][j]= i번 osbtacle에  j방향으로 움직이다가 충돌시 전환된 방향
 		/* j=> 

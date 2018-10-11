@@ -36,31 +36,41 @@ public class swAcademy_2382 {
 			}
 			for (int time =0; time < M; time++) {
 				for(int g=0;g<groups.size();g++)
-					//groups.get(g).print();
+				//groups.get(g).print();
 				//System.out.println();
 				map.clear();
 				ArrayList<Integer> keys = new ArrayList<Integer>();
+				
+				//모든 미생물 군집에 대하여
 				for (int i = 0; i < groups.size(); i++) {
+					//이동 후의 위치를 key값으로 한다
 					int key = groups.get(i).move();
 					ArrayList<MicroGroup> list = map.get(key);
+					//해당 위치로 이동을 완료한 그룹이 없으면 ArrayList의 할당이 필요하다
 					if (list == null) {
 						list = new ArrayList<MicroGroup>();
 						keys.add(key);
 					}
+					//해당 위치에 미생물을 추가한다
 					list.add(groups.get(i));
 					map.put(key, list);
 				} // end individual move
+				
+				
 				for (int i = 0; i < keys.size(); i++) {
+					//assemble : 한 위치에 모여 있는 미생물들의 list
 					ArrayList<MicroGroup> assembles = map.get(keys.get(i));
 					int max = 0;
 					int index_assembles = 0;
 					for (int j = 0; j < assembles.size(); j++) {
 						if (assembles.get(j).n > max) {
+							//가장 군집의 큰 미생물의 규모와 방향을 저장해놓는다.
 							max = assembles.get(j).n;
 							index_assembles = j;
 						}
 					}
 					for (int j = 0; j < assembles.size(); j++) {
+						//가장 큰 규모의 미생물 군집에 다른 미생물 군집을 포함시킨다.
 						if (j != index_assembles) {
 							assembles.get(index_assembles).n += assembles.get(j).n;
 							for (int k = 0; k < groups.size(); k++) {

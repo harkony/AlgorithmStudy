@@ -28,7 +28,11 @@ public class swAcademy_2117 {
 					map[low][col] = sc.nextInt();
 				}
 			}
+			
+			//kPossible : 해당 N*N을 모두 커버가능한 최소  k크기 
 			int kPossible=2*N-1;
+			
+			//maxHouses[k]: k일 때 포함 가능한 집의 최대값  
 			int maxHouses[]=new int[kPossible+1];
 			
 			for (int low = 0; low < N; low++) {
@@ -78,6 +82,8 @@ public class swAcademy_2117 {
 			}
 			//System.out.println();
 			int ans=0;
+			
+			//모든 가능한 k에 대해서 비용을 계산하여 최대값 구한다.
 			for(int i=kPossible;i>0;i--) {
 				if(maxHouses[i]*M - i*i -(i-1)*(i-1) >=0) {
 					if(ans<maxHouses[i])
