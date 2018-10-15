@@ -13,8 +13,10 @@ class Solution_2 {
 	}
     public static int[] solution(int N, int[] stages) {
        int [] answer= {};
+       // nStages[i]= i단계에 머무르고 있는 사람의 수
        int[] nStages=new int[N+1];
        int[] order=new int[N];
+       // rate[i]= i단계의 성공률
        float[] rate=new float[N+1];
        
        for(int i=0;i<stages.length;i++)

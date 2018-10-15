@@ -57,7 +57,6 @@ public class swAcademy_5656 {
 				DFS(map_copy, n + 1, score + s);
 			}
 		}
-
 	}
 
 	//map의 특정 col에 구슬을 떨어뜨렸을 때 깨지는 모든 블록의 수를 반환한다.
