@@ -16,7 +16,7 @@ public class Solution_5 {
 		for (int i = 0; i < len; i++)
 			System.out.print(ret[0][i] + " ");
 		System.out.println();
-		for (int i = 0; i < len; i++)	
+		for (int i = 0; i < len; i++)
 			System.out.print(ret[1][i] + " ");
 
 	}
@@ -112,6 +112,7 @@ public class Solution_5 {
 		}
 		return root;
 	}
+
 	static class Node {
 		int node_num;
 		int x;
