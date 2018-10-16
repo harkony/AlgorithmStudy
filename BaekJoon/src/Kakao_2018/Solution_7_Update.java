@@ -54,6 +54,7 @@ public class Solution_7_Update {
 						int type = getType(board, i, j, n, poly);
 						if (type > 1) {
 							if (checkVertical(board, i, j, type)) {
+								System.out.println(num+" is broken");
 								lists.add(num);
 								cnt++;
 								remove(board, i, j, type, poly);
@@ -96,8 +97,23 @@ public class Solution_7_Update {
 	}
 
 	public static boolean checkVertical(int board[][], int low, int col, int type) {
-		boolean flag = true;
 		int num = board[low][col];
+		int k = 4;
+		int offset = 0;
+		for (int i = 0; i < 3; i++) {
+			if (type >= k) {
+				for (int l = low; l > -1; l--) {
+					if (board[l][col + offset] != 0 && board[l][col + offset] != num)
+						return false;
+				}
+				type -= k;
+			}
+			k /= 2;
+			offset++;
+		}
+		return true;
+
+		/*
 		if (type >= 4) {
 			for (int l = low; l > -1; l--) {
 				if (board[l][col] != 0 && board[l][col] != num)
@@ -121,6 +137,7 @@ public class Solution_7_Update {
 		}
 
 		return true;
+*/
 	}
 
 	public static boolean isValid(int low, int col, int n) {

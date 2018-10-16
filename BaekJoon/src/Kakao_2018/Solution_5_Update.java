@@ -90,31 +90,33 @@ public class Solution_5_Update {
 			int nU = upper.size();
 			for (int u = 0; u < nU; u++) {
 				Node U = upper.get(u);
-	
+				boolean foundLChild = false;
+				boolean foundRChild = false;
 				for (int j = i - 1; j > -1; j--) {
 					ArrayList<Node> down = nodes.get(levels.get(j));
 					int nD=down.size();
-					boolean foundChild = false;
 					for (int d = 0; d < nD; d++) {
 						Node D = down.get(d);
-						//System.out.println(U.node_num+" "+D.node_num);;
-						if (D.x > U.left_boundary && D.x < U.x  ) {
+						//System.out.println(U.node_num+" "+D.node_num);
+						if (D.x > U.left_boundary && D.x < U.x && D.parent==null && !foundLChild) {
 							// left child condition
+							//System.out.println(D.node_num+" is left child of "+U.node_num);
 							U.left_child = D;
 							D.parent = U;
 							D.right_boundary = U.x;
 							D.left_boundary = U.left_boundary;
-							foundChild = true;						
-						} else if (D.x < U.right_boundary && D.x > U.x ) {
+							foundLChild = true;						
+						} else if (D.x < U.right_boundary && D.x > U.x && D.parent==null && !foundRChild) {
 							// right child condition
+							//System.out.println(D.node_num+" is right child of "+U.node_num);
 							U.right_child = D;
 							D.parent = U;
 							D.left_boundary = U.x;
 							D.right_boundary = U.right_boundary;
-							foundChild = true;						
+							foundRChild = true;						
 						}
 					}
-					if(foundChild){
+					if((foundLChild && foundRChild)){
 						break;
 					}
 				} //
