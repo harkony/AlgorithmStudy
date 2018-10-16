@@ -29,7 +29,7 @@ public class Solution_7 {
 		int n = board.length;
 		int total = 0;
 		ArrayList<Integer> lists = new ArrayList<Integer>();
-
+	
 		while (true) {
 			int cnt=0;
 			for (int i = 0; i < n; i++) {
@@ -72,7 +72,7 @@ public class Solution_7 {
 		}
 		return total;
 	}
-
+	
 	public static int getType(int board[][], int low, int col, int n) {
 		int type = 0;
 		int num = board[low][col];
@@ -147,6 +147,13 @@ public class Solution_7 {
 		}
 
 		System.out.println();
+	}
+	
+	
+	public static boolean isValid(int low, int col, int n) {
+		if(low<0 ||col<0 || low>=n || col>=n)
+			return false;
+		return true;
 	}
 
 }
