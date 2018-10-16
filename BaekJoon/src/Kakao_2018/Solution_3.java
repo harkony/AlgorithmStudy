@@ -9,7 +9,6 @@ import java.util.Queue;
 
 //idea
 //그냥 계산문제로 풀이하였다
-
 class Solution_3 {
 	public static void main(String[] args) {
 		String[][] relation = { 

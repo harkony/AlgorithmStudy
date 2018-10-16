@@ -112,7 +112,6 @@ public class Solution_5 {
 		}
 		return root;
 	}
-
 	static class Node {
 		int node_num;
 		int x;
