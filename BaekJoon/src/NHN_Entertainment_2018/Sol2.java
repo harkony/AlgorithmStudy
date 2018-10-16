@@ -1,4 +1,4 @@
-package NHN_Entertainment_2018;
+	package NHN_Entertainment_2018;
 
 import java.util.Scanner;
 

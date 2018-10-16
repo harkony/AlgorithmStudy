@@ -17,7 +17,7 @@ public class Solution_1 {
 			System.out.print(str2[i] + " ");
 	}
 
-	public static String[] solution(String[] record) {		
+	public static String[] solution(String[] record) {			
 		// key: uid  value: nickname
 		Map<String, String> map = new HashMap<String, String>();
 		ArrayList<String> who = new ArrayList<String>();
